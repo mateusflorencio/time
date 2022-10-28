@@ -11,7 +11,7 @@ export default function Relogio() {
 
   return (
     <section className='flex justify-center items-center w-full h-full'>
-      <div className='text-orange-500 text-9xl font-roboto '>{time}</div>
+      <div className='text-orange-500 text-4xl sm:text-6xl md:text-9xl font-roboto'>{time}</div>
     </section>
   )
 }
