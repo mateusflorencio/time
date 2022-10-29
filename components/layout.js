@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { RecoilRoot } from 'recoil'
 
 export default function Layout(props) {
   return (
@@ -7,7 +8,9 @@ export default function Layout(props) {
         <meta name='description' content='seo' />
       </Head>
       <title> Hora Atual - Relogio Online </title>
-      <main>{props.children}</main>
+      <RecoilRoot>
+        <main className='min-h-screen h-screen'>{props.children}</main>
+      </RecoilRoot>
     </>
   )
 }
