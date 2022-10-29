@@ -1,11 +1,8 @@
 import { atom } from 'recoil'
 
-
-export const Atoms = atom({
+export default atom({
   key: 'appState',
   default: {
-    alarmModal: {
-      open: false
-    }
-  }
+    alarmeModalOpen: false,
+  },
 })
