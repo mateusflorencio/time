@@ -1,5 +1,5 @@
-import { Disclosure} from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon, SunIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Clock from '../public/clock.svg'
 
@@ -16,7 +16,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as='nav' className='bg-gray-800'>
+    <Disclosure as='nav' className='bg-teal-600'>
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -35,12 +35,12 @@ export default function Nav() {
               <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
                 <div className='flex flex-shrink-0 items-center fill-red-600'>
                   <Image
-                    className='block h-8 w-auto lg:hidden fill-red-600'
+                    className='block h-8 w-auto lg:hidden'
                     src={Clock}
                     alt='relogio online'
                   />
                   <Image
-                    className='hidden h-8 w-auto lg:block cursor-pointer fill-red-600'
+                    className='hidden h-8 w-auto lg:block cursor-pointer'
                     src={Clock}
                     alt='relogio online'
                   />
@@ -53,8 +53,8 @@ export default function Nav() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            ? 'bg-teal-800 text-white'
+                            : 'text-white hover:bg-teal-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -66,12 +66,7 @@ export default function Nav() {
                 </div>
               </div>
               <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-                <button
-                  type='button'
-                  className='rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
-                >
-                  <span className='sr-only'>View notifications</span>
-                </button>
+                <SunIcon className='block h-6 w-6 stroke-white hover:fill-black hover:stroke-black cursor-pointer' />
               </div>
             </div>
           </div>
