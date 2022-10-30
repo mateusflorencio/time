@@ -7,7 +7,6 @@ export default function Mode() {
   const [{ mode }, setState] = useRecoilState(Atom)
 
   const handleMode = () => {
-    console.log(mode);
     if (mode === 'light') {
       setState((o) => ({ ...o, mode: 'dark' }))
       document.documentElement.classList.add('dark')
