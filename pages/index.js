@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout>
       <Nav/>
-      <section className='w-full h-full flex justify-center items-center'>
+      <section className='w-full h-full flex justify-center items-center bg-white  dark:bg-black'>
         <Relogio />
       </section>
     </Layout>
