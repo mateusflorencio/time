@@ -1,8 +1,7 @@
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { CancelButton, ConfirmButton } from '../general/buttons'
 
-export function Modal({ state, onClose, children, title, icon }) {
+export function Modal({ state, onClose, children, title, icon, button, buttonTwo }) {
   const cancelButtonRef = useRef(null)
 
   return (
@@ -55,8 +54,8 @@ export function Modal({ state, onClose, children, title, icon }) {
                   </div>
                 </div>
                 <div className='bg-gray-50 dark:bg-zinc-900 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6'>
-                  <ConfirmButton name={'Confirmar'} onClick={onClose} />
-                  <CancelButton name={'Cancelar'} onClick={onClose} />
+                  {button}
+                  {buttonTwo}
                 </div>
               </Dialog.Panel>
             </Transition.Child>

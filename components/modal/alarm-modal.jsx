@@ -1,33 +1,43 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import InputForm from '../general/input'
 import { useRecoilState } from 'recoil'
 import { BellAlertIcon } from '@heroicons/react/24/outline'
 import Atoms from '../states/atoms'
 import { Modal } from '../general/modal'
 
+import { CancelButton, ConfirmButton } from '../general/buttons'
+
 export default function AlarmModal() {
   const [{ showModal }, setState] = useRecoilState(Atoms)
   const cancelButtonRef = useRef(null)
+  const [hour, setHour] = useState('')
+  const [min, setMin] = useState('')
+
+  const icon = (
+    <BellAlertIcon
+      className='h-6 w-6 text-blue-600 dark:text-red-900'
+      aria-hidden='true'
+    />
+  )
 
   const handleChange = (e) => {
     if (e.target.name === 'Hora') {
-      setState((o) => ({ ...o, alarmHour: e.target.value }))
+      setHour(e.target.value)
     } else {
-      setState((o) => ({ ...o, alarmMin: e.target.value }))
+      setMin(e.target.value)
     }
   }
+
+  const handleClose = () => setState((o) => ({ ...o, showModal: false }))
 
   return (
     <Modal
       state={showModal}
-      onClose={() => setState((o) => ({ ...o, showModal: false }))}
       title={'Defina uma alarme'}
-      icon={
-        <BellAlertIcon
-          className='h-6 w-6 text-blue-600 dark:text-red-900'
-          aria-hidden='true'
-        />
-      }
+      onClose={handleClose}
+      icon={icon}
+      button={<ConfirmButton name={'Confirmar'} onClick={handleClose} />}
+      buttonTwo={<CancelButton name={'Cancelar'} onClick={handleClose} />}
     >
       <div className={'m-3 sm:w-1/2'}>
         <InputForm
