@@ -1,10 +1,13 @@
 import { useEffect } from 'react'
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
-import AlarmModal from '../alarm-modal'
+import AlarmModal from './modal/alarm-modal'
 import { useRecoilState } from 'recoil'
-import Atoms from '../atoms'
-import { BellAlertIconComponent } from './components/icons'
-import { HandleScreenComponent } from './components/handle-screen'
+import Atoms from './states/atoms'
+import {
+  ArrowsPointingInIconComponent,
+  ArrowsPointingOutIconComponent,
+  BellAlertIconComponent,
+} from './general/icons'
 
 export default function Clock() {
   const [{ hour }, setState] = useRecoilState(Atoms)
@@ -23,8 +26,14 @@ export default function Clock() {
           {hour ? hour : 'Loading...'}
         </div>
         <div className='flex justify-center mt-10'>
-          <BellAlertIconComponent setState={setState} />
-          <HandleScreenComponent handle={handle} />
+          <BellAlertIconComponent
+            onClick={() => setState((o) => ({ ...o, showModal: true }))}
+          />
+          {handle.active ? (
+            <ArrowsPointingInIconComponent onClick={handle.exit} />
+          ) : (
+            <ArrowsPointingOutIconComponent onClick={handle.enter} />
+          )}
           <AlarmModal />
         </div>
       </section>

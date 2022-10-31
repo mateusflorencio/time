@@ -1,6 +1,6 @@
 import Nav from '../components/nav'
-import Layout from '../components/layout'
-import Clock from '../components/clock/clock'
+import Layout from '../components/feat/layout'
+import Clock from '../components/clock'
 
 export default function Home() {
   return (

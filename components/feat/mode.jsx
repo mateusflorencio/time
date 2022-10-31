@@ -1,4 +1,4 @@
-import Atom from './atoms'
+import Atom from '../states/atoms'
 import { useRecoilState } from 'recoil'
 
 import { SunIcon } from '@heroicons/react/24/outline'
