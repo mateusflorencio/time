@@ -26,20 +26,20 @@ export default function Relogio() {
         <div className='text-red-600 text-4xl sm:text-6xl md:text-9xl font-roboto dark:text-orange-600'>
           {time}
         </div>
-        <div className='flex'>
+        <div className='flex justify-center mt-10'>
           <BellAlertIcon
-            className='block h-6 w-6 stroke-neutral-800 m-10 hover:fill-neutral-800 hover:scale-125 cursor-pointer transition ease-in-out duration-300 dark:text-orange-600 dark:stroke-white dark:hover:fill-white'
+            className='block h-6 w-6 stroke-neutral-800 hover:fill-neutral-800 mr-5 hover:scale-125 cursor-pointer transition ease-in-out duration-300 dark:text-orange-600 dark:stroke-white dark:hover:fill-white'
             aria-hidden='true'
             onClick={() => setState((o) => ({ ...o, alarmeModalOpen: true }))}
           />
           {handle.active ? (
             <ArrowsPointingInIcon
-              className='h-6 w-6 stroke-neutral-800 cursor-pointer mt-10 hover:scale-125 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
+              className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-125 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
               onClick={handle.exit}
             />
           ) : (
             <ArrowsPointingOutIcon
-              className='h-6 w-6 stroke-neutral-800 cursor-pointer mt-10 hover:scale-125 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
+              className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-125 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
               onClick={handle.enter}
             />
           )}
