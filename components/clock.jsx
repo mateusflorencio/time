@@ -15,7 +15,7 @@ export default function Clock() {
 
   useEffect(() => {
     setInterval(() => {
-      setState((o) => ({ ...o, hour: new Date().toLocaleTimeString() }))
+      setState((o) => ({ ...o, hour: new Date().toLocaleTimeString('en-GB') }))
     }, 1000)
   }, [])
 
