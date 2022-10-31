@@ -9,6 +9,14 @@ export default function AlarmModal() {
   const [{ showModal }, setState] = useRecoilState(Atoms)
   const cancelButtonRef = useRef(null)
 
+  const handleChange = (e) => {
+    if (e.target.name === 'Hora') {
+      setState((o) => ({ ...o, alarmHour: e.target.value }))
+    } else {
+      setState((o) => ({ ...o, alarmMin: e.target.value }))
+    }
+  }
+
   return (
     <Modal
       state={showModal}
@@ -27,6 +35,7 @@ export default function AlarmModal() {
           title={'Hora '}
           placeholder={'HH'}
           property={{ type: 'number', min: '0', max: '23' }}
+          onChange={handleChange}
         />
       </div>
       <div className={'m-3 sm:w-1/2'}>
@@ -34,6 +43,7 @@ export default function AlarmModal() {
           title={'Minuto'}
           placeholder={'MM'}
           property={{ type: 'number', min: '0', max: '59' }}
+          onChange={handleChange}
         />
       </div>
     </Modal>

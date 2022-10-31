@@ -5,7 +5,9 @@ export default atom({
   default: {
     showModal: false,
     mode: 'ligth',
-    alarm: { hour: '0', min: '0' },
+    alarmHour: '0',
+    alarmMin: '0',
     hour: false,
+    alarm: false
   },
 })
