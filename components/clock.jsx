@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 import AlarmModal from './modal/alarm-modal'
+import DescativeAlarm from './modal/desactive-alarm-modal'
 import { useRecoilState } from 'recoil'
 import Atoms from './states/atoms'
 import {
@@ -10,7 +11,7 @@ import {
 } from './general/icons'
 
 export default function Clock() {
-  const [{ hour }, setState] = useRecoilState(Atoms)
+  const [{ hour, showModalDesactiveAlarm }, setState] = useRecoilState(Atoms)
   const handle = useFullScreenHandle()
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Clock() {
             <ArrowsPointingOutIconComponent onClick={handle.enter} />
           )}
           <AlarmModal />
+          <DescativeAlarm show = {showModalDesactiveAlarm}/>
         </div>
       </section>
     </FullScreen>
