@@ -18,7 +18,7 @@ export default function Clock() {
     setInterval(() => {
       setState((o) => ({ ...o, hour: new Date().toLocaleTimeString('en-GB') }))
     }, 1000)
-  }, [])
+  },[])
 
   return (
     <FullScreen handle={handle}>
@@ -36,7 +36,7 @@ export default function Clock() {
             <ArrowsPointingOutIconComponent onClick={handle.enter} />
           )}
           <AlarmModal />
-          <DescativeAlarm show = {showModalDesactiveAlarm}/>
+          <DescativeAlarm show={showModalDesactiveAlarm} />
         </div>
       </section>
     </FullScreen>

@@ -8,6 +8,6 @@ export default atom({
     mode: 'ligth',
     hour: false,
     alarm: false,
-    stop: null
+    stop: null,
   },
 })

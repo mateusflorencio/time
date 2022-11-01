@@ -2,6 +2,9 @@ import {
   BellAlertIcon,
   ArrowsPointingOutIcon,
   ArrowsPointingInIcon,
+  PlayIcon,
+  StopIcon,
+  PauseIcon,
 } from '@heroicons/react/24/outline'
 
 export const BellAlertIconComponent = ({ onClick }) => (
@@ -23,6 +26,27 @@ export const ArrowsPointingInIconComponent = ({ onClick }) => (
 export const ArrowsPointingOutIconComponent = ({ onClick }) => (
   <ArrowsPointingOutIcon
     className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-125 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
+    onClick={onClick}
+  />
+)
+
+export const PlayIconComponent = ({ onClick }) => (
+  <PlayIcon
+    className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-150 hover:stroke-green-600 hover:fill-green-600 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
+    onClick={onClick}
+  />
+)
+
+export const StopIconComponent = ({ onClick }) => (
+  <StopIcon
+    className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-150 hover:stroke-red-600 hover:fill-red-600 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
+    onClick={onClick}
+  />
+)
+
+export const PauseIconComponent = ({ onClick }) => (
+  <PauseIcon
+    className='h-6 w-6 stroke-neutral-800 cursor-pointer ml-5  hover:scale-150 hover:stroke-zinc-600 hover:fill-red-600 trasition ease-in-out duration-300 dark:stroke-white dark:hover:fill-white'
     onClick={onClick}
   />
 )
